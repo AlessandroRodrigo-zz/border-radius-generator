@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <resultRadius />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import resultRadius from './components/resultRadius.vue';
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
-}
+    resultRadius,
+  },
+
+  data: () => ({}),
+};
 </script>
 
-<style>
+<style lang="css">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #82206d;
+  background-image: url(http://www.transparenttextures.com/patterns/arches.png);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto Light', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 </style>
