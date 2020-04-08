@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # border-radius-generator
 Um projeto feito em Vue com a única finalidade de estudo.
 
