@@ -30,7 +30,7 @@ export default {
   padding-bottom: 3%;
 }
 
-@media (max-width: 320px), {
+@media (max-width: 320px) {
   #app {
     height: 100%;
   }

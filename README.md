@@ -1,5 +1,8 @@
 <<<<<<< HEAD
-# border-generator
+# border-radius-generator
+Um projeto feito em Vue com a única finalidade de estudo.
+
+<img style="margin: 0 auto" width="1848" height="979" src="src/assets/printTela.png" alt="Tela do projeto">
 
 ## Project setup
 ```
@@ -24,5 +27,3 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 =======
-# border-radius-generator
->>>>>>> 2b8eb60594b36b2262ded0340d0325f0ad319729
