@@ -1,7 +1,7 @@
 # border-radius-generator
 Um projeto feito em Vue com a única finalidade de estudo.
 
-<img style="margin: 0 auto" width="1848" height="979" src="src/assets/printTela.png" alt="Tela do projeto">
+<img width="1848" height="979" src="src/assets/printTela.png" alt="Tela do projeto">
 
 ## Project setup
 ```
