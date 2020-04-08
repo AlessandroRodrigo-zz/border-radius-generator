@@ -17,7 +17,6 @@
           max="100"
           step="1"
         />
-        <span>{{ `${radiusGeral}%` }}</span>
       </div>
       <div class="hr" />
       <div class="controllerGroup">
@@ -41,7 +40,6 @@
           </g>
         </svg>
         <input
-          @change="isIndividual"
           type="range"
           v-model="topLeft"
           class="controller slider"
@@ -49,7 +47,6 @@
           max="100"
           step="1"
         />
-        <span>{{ `${topLeft}%` }}</span>
       </div>
       <div class="controllerGroup">
         <svg
@@ -72,7 +69,6 @@
           </g>
         </svg>
         <input
-          @change="isIndividual"
           type="range"
           v-model="topRight"
           class="controller slider"
@@ -80,7 +76,6 @@
           max="100"
           step="1"
         />
-        <span>{{ `${topRight}%` }}</span>
       </div>
       <div class="controllerGroup">
         <svg
@@ -103,7 +98,6 @@
           </g>
         </svg>
         <input
-          @change="isIndividual"
           type="range"
           v-model="bottomLeft"
           class="controller slider"
@@ -111,7 +105,6 @@
           max="100"
           step="1"
         />
-        <span>{{ `${bottomLeft}%` }}</span>
       </div>
       <div class="controllerGroup">
         <svg
@@ -134,7 +127,6 @@
           </g>
         </svg>
         <input
-          @change="isIndividual"
           type="range"
           v-model="bottomRight"
           class="controller slider"
@@ -142,9 +134,18 @@
           max="100"
           step="1"
         />
-        <span>{{ `${bottomRight}%` }}</span>
       </div>
-      <textarea v-model="result" disabled></textarea>
+      <textarea ref="copyResult" v-model="result" disabled></textarea>
+      <div class="buttonGroup">
+        <button class="btnClipboard" @click="copyClipboard">
+          <font-awesome-icon icon="paste" color="white" />
+          Copiar para a clipboard
+        </button>
+        <button @click="reset" class="btnReset">
+          <font-awesome-icon icon="redo" color="white" />
+          Resetar
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -174,14 +175,77 @@ export default {
     },
   },
   methods: {
-    isIndividual() {
-      this.isGeral = false;
+    reset() {
+      this.topLeft = 0;
+      this.topRight = 0;
+      this.bottomRight = 0;
+      this.bottomLeft = 0;
+      this.$snack.show({
+        text: 'Valores resetados!',
+      });
+    },
+    copyClipboard() {
+      const el = document.createElement('textarea');
+      el.value = this.result;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      this.$snack.success({
+        text: 'Borda copiada!',
+      });
     },
   },
 };
 </script>
 
 <style scoped>
+.btnReset svg,
+.btnClipboard svg {
+  margin-right: 8px;
+}
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonGroup .btnClipboard {
+  flex: 2;
+  -webkit-appearance: none;
+  border: none;
+  background-color: #d6a104;
+  border-radius: 50px;
+  margin-right: 30px;
+  padding: 20px 10px;
+  font-size: 16px;
+  color: #f7f7f7;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.buttonGroup .btnClipboard:hover,
+.buttonGroup .btnReset:hover {
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.buttonGroup .btnReset {
+  flex: 1;
+  -webkit-appearance: none;
+  border: none;
+  background-color: #232540;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #f7f7f7;
+  font-weight: bold;
+  padding: 20px 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
 .controllers > textarea {
   width: 100%;
   margin: 7% 0;
@@ -257,6 +321,8 @@ export default {
 
 .controllerGroup > span {
   color: white;
+  width: fit-content;
+  margin-left: 10px;
 }
 
 .controllerGroup > img {

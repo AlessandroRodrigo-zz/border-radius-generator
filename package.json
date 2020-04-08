@@ -13,7 +13,8 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-range-slider": "^0.6.0"
+    "vue-range-slider": "^0.6.0",
+    "vue-snack": "^0.1.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
