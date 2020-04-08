@@ -141,6 +141,7 @@
           <font-awesome-icon icon="paste" color="white" />
           Copiar para a clipboard
         </button>
+        <hr class="divider" />
         <button @click="reset" class="btnReset">
           <font-awesome-icon icon="redo" color="white" />
           Resetar
@@ -200,6 +201,14 @@ export default {
 </script>
 
 <style scoped>
+.divider {
+  height: auto;
+  width: 1px;
+  margin: 0 3%;
+  opacity: 0;
+  background-color: black;
+}
+
 .btnReset svg,
 .btnClipboard svg {
   margin-right: 8px;
@@ -215,7 +224,6 @@ export default {
   border: none;
   background-color: #d6a104;
   border-radius: 50px;
-  margin-right: 30px;
   padding: 20px 10px;
   font-size: 16px;
   color: #f7f7f7;
@@ -347,5 +355,68 @@ export default {
   margin: 0 10% 0 0;
   background-image: linear-gradient(25deg, #e30051, #ec6a47, #f2a136, #f2d400);
   box-shadow: 60px 66px 92px -11px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 970px) {
+  .container {
+    flex-direction: column;
+  }
+  .controllers {
+    margin-top: 5%;
+    width: 60%;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+    margin: 10% 0 0 0;
+  }
+}
+@media (max-width: 768px) {
+  .buttonGroup {
+    flex-direction: column;
+  }
+  .buttonGroup .btnClipboard {
+    margin: 0;
+  }
+  .buttonGroup .btnReset {
+    margin-top: 5%;
+    margin-left: 0;
+  }
+  .divider {
+    display: none;
+  }
+  .slider {
+    margin: 3% 0 3% 10%;
+  }
+  .controllers {
+    width: 90%;
+  }
+}
+@media (max-width: 425px) {
+  .controllers {
+    width: 90%;
+  }
+  .slider {
+    margin: 3% 0 3% 10%;
+  }
+  .box {
+    margin: 0;
+  }
+}
+@media (max-width: 320px) {
+  .controllers {
+    width: 90%;
+    margin-top: 10%;
+  }
+  .slider {
+    margin: 3% 0 3% 10%;
+  }
+  .box {
+    margin-top: 10%;
+  }
+  .btnReset {
+    margin-bottom: 5%;
+  }
 }
 </style>

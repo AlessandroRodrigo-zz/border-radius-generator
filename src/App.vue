@@ -27,6 +27,25 @@ export default {
   display: flex;
   align-items: center;
   font-family: 'Roboto Light', sans-serif;
+  padding-bottom: 3%;
+}
+
+@media (max-width: 320px), {
+  #app {
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #app {
+    height: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  #app {
+    height: 100%;
+  }
 }
 
 * {
