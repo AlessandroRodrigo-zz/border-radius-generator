@@ -1,7 +1,7 @@
 # border-radius-generator
 Um projeto feito em Vue com a única finalidade de estudo.
 
-![](src/assets/printTela.png)
+![Imagem da aplicação](https://github.com/AlessandroRodrigo/border-radius-generator/raw/master/src/assets/printTela.png)
 
 ## Project setup
 ```
