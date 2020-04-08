@@ -2,6 +2,7 @@
 Um projeto feito em Vue com a única finalidade de estudo.
 
 ![Imagem da aplicação](https://github.com/AlessandroRodrigo/border-radius-generator/tree/master/src/assets/printTela.png)
+![Imagem da aplicação](src/assets/printTela.png)
 
 ## Project setup
 ```
